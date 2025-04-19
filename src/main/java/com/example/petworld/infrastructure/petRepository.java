@@ -1,6 +1,20 @@
 package com.example.petworld.infrastructure;
 
+import com.example.petworld.domain.Pet;
 import org.springframework.data.jpa.repository.JpaRepository;
-import com.example.petworld.domain.pet;
+import org.springframework.stereotype.Repository;
 
-public interface petRepository extends JpaRepository<pet, Long> {}
+import java.util.List;
+
+@Repository
+public interface PetRepository extends JpaRepository<Pet, Long> {
+
+    // Buscar mascotas por tipo
+    List<Pet> findByType(String type);
+
+    // Buscar mascotas por ID del dueño
+    List<Pet> findByOwnerId(Long ownerId);
+
+    // Buscar mascotas por tipo y ID del dueño
+    List<Pet> findByTypeAndOwnerId(String type, Long ownerId);
+}

@@ -1,6 +1,6 @@
 package com.example.petworld.infrastructure;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import com.example.petworld.domain.user;
+import com.example.petworld.domain.User;
 
-public interface userRepository extends JpaRepository<user, Long> {}
+public interface UserRepository extends JpaRepository<User, Long> {}
